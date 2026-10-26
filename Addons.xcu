@@ -44,17 +44,6 @@
                 </node>
                 <node oor:name="M02" oor:op="replace">
                   <prop oor:name="URL" oor:type="xs:string">
-                    <value>vnd.io.github.mermaidviewer:RefreshAll</value>
-                  </prop>
-                  <prop oor:name="Title" oor:type="xs:string">
-                    <value xml:lang="en-US">Re-render All Diagrams</value>
-                  </prop>
-                  <prop oor:name="Target" oor:type="xs:string">
-                    <value>_self</value>
-                  </prop>
-                </node>
-                <node oor:name="M02b" oor:op="replace">
-                  <prop oor:name="URL" oor:type="xs:string">
                     <value>vnd.io.github.mermaidviewer:ConvertBlocks</value>
                   </prop>
                   <prop oor:name="Title" oor:type="xs:string">
@@ -69,13 +58,24 @@
                 </node>
                 <node oor:name="M03" oor:op="replace">
                   <prop oor:name="URL" oor:type="xs:string">
+                    <value>vnd.io.github.mermaidviewer:RefreshAll</value>
+                  </prop>
+                  <prop oor:name="Title" oor:type="xs:string">
+                    <value xml:lang="en-US">Re-render All Diagrams</value>
+                  </prop>
+                  <prop oor:name="Target" oor:type="xs:string">
+                    <value>_self</value>
+                  </prop>
+                </node>
+                <node oor:name="M04" oor:op="replace">
+                  <prop oor:name="URL" oor:type="xs:string">
                     <value>private:separator</value>
                   </prop>
                   <prop oor:name="Title" oor:type="xs:string">
                     <value xml:lang="en-US"/>
                   </prop>
                 </node>
-                <node oor:name="M04" oor:op="replace">
+                <node oor:name="M05" oor:op="replace">
                   <prop oor:name="URL" oor:type="xs:string">
                     <value>vnd.io.github.mermaidviewer:Settings</value>
                   </prop>
@@ -113,7 +113,7 @@
             <value>%origin%/icons/mermaid</value>
           </prop>
         </node>
-        <node oor:name="T01b" oor:op="replace">
+        <node oor:name="T02" oor:op="replace">
           <prop oor:name="URL" oor:type="xs:string">
             <value>vnd.io.github.mermaidviewer:ConvertBlocks</value>
           </prop>
@@ -130,7 +130,7 @@
             <value>%origin%/icons/convert</value>
           </prop>
         </node>
-        <node oor:name="T02" oor:op="replace">
+        <node oor:name="T03" oor:op="replace">
           <prop oor:name="URL" oor:type="xs:string">
             <value>vnd.io.github.mermaidviewer:RefreshAll</value>
           </prop>
@@ -164,7 +164,7 @@
           </prop>
         </node>
       </node>
-      <node oor:name="io.github.mermaidviewer.libreoffice.img1b" oor:op="replace">
+      <node oor:name="io.github.mermaidviewer.libreoffice.img2" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>vnd.io.github.mermaidviewer:ConvertBlocks</value>
         </prop>
@@ -177,7 +177,7 @@
           </prop>
         </node>
       </node>
-      <node oor:name="io.github.mermaidviewer.libreoffice.img2" oor:op="replace">
+      <node oor:name="io.github.mermaidviewer.libreoffice.img3" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>vnd.io.github.mermaidviewer:RefreshAll</value>
         </prop>
