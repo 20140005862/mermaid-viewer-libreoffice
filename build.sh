@@ -2,6 +2,10 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
+#
+# Mermaid Viewer for LibreOffice
+# Product Owner: Oengus Property Cloud (Ralph Angus)
+# https://github.com/20140005862/mermaid-viewer-libreoffice
 # Package the extension. An .oxt is nothing more than a zip with a known layout,
 # so this is the whole build system.
 set -e

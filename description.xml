@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mermaid Viewer for LibreOffice
+  Product Owner: Oengus Property Cloud (Ralph Angus)
+  https://github.com/20140005862/mermaid-viewer-libreoffice
+
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at https://mozilla.org/MPL/2.0/.
+-->
 <description xmlns="http://openoffice.org/extensions/description/2006"
              xmlns:d="http://openoffice.org/extensions/description/2006"
              xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -15,7 +24,7 @@
   </extension-description>
 
   <publisher>
-    <name xlink:href="https://github.com/20140005862/mermaid-viewer-libreoffice" lang="en">20140005862</name>
+    <name xlink:href="https://github.com/20140005862/mermaid-viewer-libreoffice" lang="en">Oengus Property Cloud (Ralph Angus)</name>
   </publisher>
 
   <dependencies>

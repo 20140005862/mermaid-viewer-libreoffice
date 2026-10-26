@@ -1,6 +1,6 @@
 # Mermaid Viewer for LibreOffice
 
-**Product Owner:** Ralph Angus · **Created:** 2026-10-26 · **Last updated:** 2026-10-27
+**Product Owner:** Oengus Property Cloud (Ralph Angus) · **Created:** 2026-10-26 · **Last updated:** 2026-10-27
 
 Write [Mermaid](https://mermaid.js.org/) diagrams in LibreOffice Writer, Draw
 and Impress — and keep them editable afterwards.

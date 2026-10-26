@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mermaid Viewer for LibreOffice
+  Product Owner: Oengus Property Cloud (Ralph Angus)
+  https://github.com/20140005862/mermaid-viewer-libreoffice
+
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at https://mozilla.org/MPL/2.0/.
+-->
 <components xmlns="http://openoffice.org/2010/uno-components">
   <component loader="com.sun.star.loader.Python" uri="./mermaid_handler.py">
     <implementation name="io.github.mermaidviewer.libreoffice.Handler">

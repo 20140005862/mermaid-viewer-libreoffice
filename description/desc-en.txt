@@ -1,6 +1,13 @@
 Insert and edit Mermaid diagrams in Writer, Draw and Impress.
 
-Diagrams are rendered to SVG by an external renderer (mermaid-cli or a Kroki
-server) and inserted as pictures. The Mermaid source is stored in the picture's
+Diagrams are rendered by an external renderer (mermaid-cli or a Kroki server)
+and inserted as pictures. The Mermaid source is stored in the picture's
 Description field, so a diagram can be selected and re-opened for editing at
 any time, and it survives round-tripping through ODF.
+
+Also converts Mermaid code blocks in an imported Markdown document into
+rendered diagrams, in place.
+
+Requires mermaid-cli or a Kroki server. See the project page for setup.
+
+Product Owner: Oengus Property Cloud (Ralph Angus)
