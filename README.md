@@ -1,6 +1,6 @@
 # Mermaid Viewer for LibreOffice
 
-**Product Owner:** Ralph Angus · **Created:** 2026-10-26 · **Last updated:** 2026-10-26
+**Product Owner:** Ralph Angus · **Created:** 2026-10-26 · **Last updated:** 2026-10-27
 
 Write [Mermaid](https://mermaid.js.org/) diagrams in LibreOffice Writer, Draw
 and Impress — and keep them editable afterwards.
@@ -106,25 +106,45 @@ so you can leave **Path to mmdc** empty in Settings.
 
 One catch: **the Homebrew build does not ship a browser.** mermaid-cli renders
 by driving headless Chromium, and Homebrew's formula expects you to supply one.
-Without it you get `Could not find chrome-headless-shell (ver. …)`. Two fixes,
-either is fine:
+Without it, rendering fails with:
 
-```sh
-# Point it at a browser you already have — nothing to download.
-# Settings > Path to Chrome:
-#   /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+```
+Error: Could not find chrome-headless-shell (ver. 154.0.8037.57).
 ```
 
-```sh
-# Or fetch the exact headless build it is asking for.
-# Pin the version from the error message; Puppeteer checks for that build.
-npx @puppeteer/browsers install chrome-headless-shell@<version from the error>
+**The fix: point it at Chrome.** In LibreOffice, **Tools → Mermaid →
+Settings → Path to Chrome**, enter:
+
+```
+/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 ```
 
-The download lands in `~/.cache/puppeteer`, where mermaid-cli already looks, so
-no setting is needed afterwards. Setting an explicit browser path instead makes
-Puppeteer skip its version check, which is why any recent Chrome, Chromium,
-Edge or Brave works.
+Paste it literally — the spaces are fine, no quotes or backslashes. Confirm the
+binary is there first:
+
+```sh
+ls -l "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+```
+
+Then click OK and render. ✅ *Confirmed working: macOS on Apple Silicon,
+Homebrew mermaid-cli 12, Google Chrome, October 2026.*
+
+This works because an explicit browser path makes Puppeteer skip its version
+check entirely, so any recent Chrome, Chromium, Edge or Brave will do. Chrome
+is launched headless with its own temporary profile, so your windows, tabs and
+sessions are untouched.
+
+**Alternative — download the headless build it asked for:**
+
+```sh
+npx @puppeteer/browsers install chrome-headless-shell@154.0.8037.57
+```
+
+Pin the exact version from your error message; Puppeteer checks for that
+specific build and a newer one will not satisfy it. It lands in
+`~/.cache/puppeteer`, where mermaid-cli already looks, so no setting is needed
+afterwards. Take this one if you would rather LibreOffice not drive your
+everyday browser binary.
 
 Avoid `brew install --cask chromium` for this: the cask is unsigned and macOS
 Gatekeeper blocks it. Use a notarized browser, or
@@ -320,6 +340,9 @@ Either point it at a browser you already have, in Settings → Path to Chrome:
 ```
 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 ```
+
+This is the quickest fix and is confirmed working on macOS with Homebrew's
+mermaid-cli 12.
 
 or download the exact build it asks for:
 
