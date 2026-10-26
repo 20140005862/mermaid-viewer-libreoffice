@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://openoffice.org/extensions/description/2006"
+             xmlns:d="http://openoffice.org/extensions/description/2006"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identifier value="io.github.mermaidviewer.libreoffice"/>
+  <version value="0.1.0"/>
+
+  <display-name>
+    <name lang="en">Mermaid Viewer</name>
+  </display-name>
+
+  <extension-description>
+    <src xlink:href="description/desc-en.txt" lang="en"/>
+  </extension-description>
+
+  <publisher>
+    <name xlink:href="https://github.com/20140005862/mermaid-viewer-libreoffice" lang="en">20140005862</name>
+  </publisher>
+
+  <dependencies>
+    <!-- 4.1 covers essentially every LibreOffice in the field -->
+    <OpenOffice.org-minimal-version value="4.1" d:name="LibreOffice 4.1"/>
+  </dependencies>
+
+  <icon>
+    <default xlink:href="icons/mermaid_26.png"/>
+  </icon>
+
+</description>

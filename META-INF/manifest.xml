@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE manifest:manifest PUBLIC "-//OpenOffice.org//DTD Manifest 1.0//EN" "Manifest.dtd">
+<manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
+
+  <!-- Passive registration: LibreOffice reads this at install time and knows
+       which implementations this extension provides without executing it. -->
+  <manifest:file-entry
+      manifest:media-type="application/vnd.sun.star.uno-components"
+      manifest:full-path="mermaid.components"/>
+
+  <!-- Maps the vnd.io.github.mermaidviewer: URL scheme to our dispatch handler -->
+  <manifest:file-entry
+      manifest:media-type="application/vnd.sun.star.configuration-data"
+      manifest:full-path="ProtocolHandler.xcu"/>
+
+  <!-- Menu and toolbar entries that fire those URLs -->
+  <manifest:file-entry
+      manifest:media-type="application/vnd.sun.star.configuration-data"
+      manifest:full-path="Addons.xcu"/>
+
+</manifest:manifest>

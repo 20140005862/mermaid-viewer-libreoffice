@@ -54,7 +54,7 @@ do you keep a flat image editable?
 | | |
 | --- | --- |
 | LibreOffice | 4.1+ (tested on 24.2 and 26.2) |
-| Platforms | Linux, macOS, Windows |
+| Platforms | Linux, macOS (Intel and Apple Silicon), Windows |
 | Renderer | [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) **or** a [Kroki](https://kroki.io/) server |
 
 Python comes bundled with LibreOffice; you do not need to install it.
@@ -89,9 +89,54 @@ npm install @mermaid-js/mermaid-cli
 like this needs no admin rights and brings its own browser, which makes it the
 least troublesome option by some distance.
 
-`npm install -g @mermaid-js/mermaid-cli` also works. `brew install mermaid-cli`
-works too but does **not** ship a browser — see
-[Troubleshooting](#troubleshooting).
+`npm install -g @mermaid-js/mermaid-cli` also works, though a global install
+into a Homebrew-managed Node often fails with `EACCES` on
+`/opt/homebrew/lib/node_modules`. Don't reach for `sudo npm install -g`: it
+leaves root-owned files in your Homebrew tree and runs mermaid-cli's
+browser-download step as root. The local install above sidesteps it entirely.
+
+**Option A2 — Homebrew, for macOS.**
+
+```sh
+brew install mermaid-cli
+```
+
+`mmdc` lands in `/opt/homebrew/bin`, which this extension searches on its own,
+so you can leave **Path to mmdc** empty in Settings.
+
+One catch: **the Homebrew build does not ship a browser.** mermaid-cli renders
+by driving headless Chromium, and Homebrew's formula expects you to supply one.
+Without it you get `Could not find chrome-headless-shell (ver. …)`. Two fixes,
+either is fine:
+
+```sh
+# Point it at a browser you already have — nothing to download.
+# Settings > Path to Chrome:
+#   /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+```
+
+```sh
+# Or fetch the exact headless build it is asking for.
+# Pin the version from the error message; Puppeteer checks for that build.
+npx @puppeteer/browsers install chrome-headless-shell@<version from the error>
+```
+
+The download lands in `~/.cache/puppeteer`, where mermaid-cli already looks, so
+no setting is needed afterwards. Setting an explicit browser path instead makes
+Puppeteer skip its version check, which is why any recent Chrome, Chromium,
+Edge or Brave works.
+
+Avoid `brew install --cask chromium` for this: the cask is unsigned and macOS
+Gatekeeper blocks it. Use a notarized browser, or
+`brew install --cask --no-quarantine chromium`, or the `npx` download — a CLI
+download never sets the quarantine flag, so Gatekeeper is not involved.
+
+LibreOffice itself is also available via Homebrew, if you want everything in
+one place:
+
+```sh
+brew install --cask libreoffice
+```
 
 **Option B — Kroki.** Nothing to install on each machine.
 
