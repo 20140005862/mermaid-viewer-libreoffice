@@ -20,6 +20,7 @@ the editor reopens with its original code. Import a Markdown file full of
 
 - [Why this exists](#why-this-exists)
 - [Install](#install)
+  - [Settings](#3-settings)
 - [Usage](#usage)
 - [Where the Mermaid source goes](#where-the-mermaid-source-goes)
 - [Why PNG and not SVG](#why-png-and-not-svg)
@@ -112,27 +113,9 @@ Without it, rendering fails with:
 Error: Could not find chrome-headless-shell (ver. 154.0.8037.57).
 ```
 
-**The fix: point it at Chrome.** In LibreOffice, **Tools → Mermaid →
-Settings → Path to Chrome**, enter:
-
-```
-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-```
-
-Paste it literally — the spaces are fine, no quotes or backslashes. Confirm the
-binary is there first:
-
-```sh
-ls -l "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-```
-
-Then click OK and render. ✅ *Confirmed working: macOS on Apple Silicon,
-Homebrew mermaid-cli 12, Google Chrome, October 2026.*
-
-This works because an explicit browser path makes Puppeteer skip its version
-check entirely, so any recent Chrome, Chromium, Edge or Brave will do. Chrome
-is launched headless with its own temporary profile, so your windows, tabs and
-sessions are untouched.
+**The fix: point it at Chrome.** Set **Path to Chrome** in
+[Settings](#path-to-chrome) — one field, nothing to download. ✅ Confirmed
+working on macOS with Homebrew's mermaid-cli 12.
 
 **Alternative — download the headless build it asked for:**
 
@@ -179,11 +162,46 @@ others from the same endpoint.
 | Setting | Purpose |
 | --- | --- |
 | Renderer | `auto` (mmdc, falling back to Kroki), `mmdc`, or `kroki` |
-| Path to mmdc | Leave empty to search. Fill in only if it is not found |
+| Path to mmdc | Leave empty to search PATH and the usual install locations. Fill in only if it is not found |
 | Kroki server URL | Your own Kroki instance |
 | Image format | `png` (default) or `svg` — see [Why PNG](#why-png-and-not-svg) |
 | Path to node | Only if `mmdc` cannot find Node itself |
-| Path to Chrome | Only if mermaid-cli has no browser of its own |
+| Path to Chrome | Only if mermaid-cli has no browser of its own — see below |
+
+Most installs need nothing here. Leave the paths empty and the extension finds
+`mmdc` on its own.
+
+#### Path to Chrome
+
+Fill this in when rendering fails with `Could not find chrome-headless-shell`.
+Homebrew's mermaid-cli does not ship a browser; an `npm install` one does.
+
+On macOS, enter:
+
+```
+/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+```
+
+Paste it literally — the spaces are fine, no quotes or backslashes. Confirm the
+binary is there first:
+
+```sh
+ls -l "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+```
+
+✅ *Confirmed working: macOS on Apple Silicon, Homebrew mermaid-cli 12, Google
+Chrome, October 2026.*
+
+An explicit path makes Puppeteer skip its version check, so any recent Chrome,
+Chromium, Edge or Brave works. On Windows that is typically
+`C:\Program Files\Google\Chrome\Application\chrome.exe`; on Linux, the output
+of `which google-chrome` or `which chromium`.
+
+Chrome is launched headless with its own temporary profile, so your windows,
+tabs and sessions are untouched. If you would rather not point LibreOffice at
+your everyday browser, download a dedicated headless build instead and leave
+this setting empty — see
+[Troubleshooting](#troubleshooting).
 
 Settings are stored as JSON in your LibreOffice user profile
 (`mermaid_viewer.json`), so you can edit them by hand when something is wrong.
