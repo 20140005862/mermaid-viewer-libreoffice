@@ -51,7 +51,7 @@
                     <value>_self</value>
                   </prop>
                 </node>
-                <node oor:name="M02" oor:op="replace">
+                <node oor:name="M03" oor:op="replace">
                   <prop oor:name="URL" oor:type="xs:string">
                     <value>vnd.io.github.mermaidviewer:ConvertBlocks</value>
                   </prop>
@@ -65,7 +65,7 @@
                     <value>com.sun.star.text.TextDocument</value>
                   </prop>
                 </node>
-                <node oor:name="M03" oor:op="replace">
+                <node oor:name="M02" oor:op="replace">
                   <prop oor:name="URL" oor:type="xs:string">
                     <value>vnd.io.github.mermaidviewer:RefreshAll</value>
                   </prop>

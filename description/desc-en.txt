@@ -9,4 +9,3 @@ any time, and it survives round-tripping through ODF.
 
 Requires mermaid-cli or a Kroki server. See the project page for setup.
 
-Product Owner: Oengus Property Cloud (Ralph Angus)

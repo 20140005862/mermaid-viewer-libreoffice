@@ -13,7 +13,7 @@
              xmlns:xlink="http://www.w3.org/1999/xlink">
 
   <identifier value="io.github.mermaidviewer.libreoffice"/>
-  <version value="0.1.2"/>
+  <version value="0.1.3"/>
 
   <display-name>
     <name lang="en">Mermaid Viewer</name>
