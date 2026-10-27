@@ -122,7 +122,7 @@
             <value>%origin%/icons/mermaid</value>
           </prop>
         </node>
-        <node oor:name="T02" oor:op="replace">
+        <node oor:name="T03" oor:op="replace">
           <prop oor:name="URL" oor:type="xs:string">
             <value>vnd.io.github.mermaidviewer:ConvertBlocks</value>
           </prop>
@@ -139,7 +139,7 @@
             <value>%origin%/icons/convert</value>
           </prop>
         </node>
-        <node oor:name="T03" oor:op="replace">
+        <node oor:name="T02" oor:op="replace">
           <prop oor:name="URL" oor:type="xs:string">
             <value>vnd.io.github.mermaidviewer:RefreshAll</value>
           </prop>
