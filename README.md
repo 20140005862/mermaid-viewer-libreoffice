@@ -14,7 +14,7 @@ the editor reopens with its original code. Import a Markdown file full of
 > mermaid-cli 12, on Linux and macOS. It does useful work, but it has not been
 > through the wringer. Issues and PRs welcome.
 
-<!-- Add a screenshot here: Tools > Mermaid menu, and a converted document. -->
+![Before and after: a Markdown document imported into Writer, then converted with Tools - Mermaid - Render Mermaid Code in This Document](docs/screenshot-before-after.png)
 
 ## Contents
 
@@ -484,3 +484,8 @@ files stay under the MPL and have to be made available in source form.
   store-the-source-in-the-image pattern
 - [Libo_PlantUML](https://github.com/lodahl/Libo_PlantUML) for the
   visible-source alternative
+
+Developed with the help of [Claude](https://claude.ai) (Anthropic). The
+LibreOffice-specific findings documented above — the SVG `<style>` and
+`<foreignObject>` behaviour, and the label-wrapping defaults — came out of
+testing against a real LibreOffice during that work, not from documentation.
